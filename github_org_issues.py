@@ -17,8 +17,7 @@ def main():
         repo_name = repo['name']
         open_issues_count = repo['open_issues_count']
         repo_url = repo['html_url']
-        issues_url = '%s/issues' % repo_url
-        print('%s - %i - %s' % (repo_name, open_issues_count, issues_url))
+        print('%s - %i' % (repo_name, open_issues_count))
 
 if __name__ == '__main__':
     main()
