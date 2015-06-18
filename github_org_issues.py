@@ -14,10 +14,11 @@ def main():
     org = "raspberrypilearning"
     repos = get_org_repos_with_open_issues(org)
     for repo in repos:
-        repo_path = repo['full_name']
-        repo_name = repo_path.split('/')[1]
+        repo_name = repo['name']
         open_issues_count = repo['open_issues_count']
-        print('%s - %i' % (repo_name, open_issues_count))
+        repo_url = repo['html_url']
+        issues_url = '%s/issues' % repo_url
+        print('%s - %i - %s' % (repo_name, open_issues_count, issues_url))
 
 if __name__ == '__main__':
     main()
